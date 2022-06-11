@@ -16,4 +16,16 @@ class LikeController extends Controller{
             "status" => "Success"
         ], 200);
     }
+    public function getAllLikes($id = null){
+        if($id != null){
+            $likes = Like::find($id);
+        }else{
+            $likes = Like::all();
+        }
+        
+        return response()->json([
+            "status" => "Success",
+            "likes" => $likes
+        ], 200);
+    }
 }
