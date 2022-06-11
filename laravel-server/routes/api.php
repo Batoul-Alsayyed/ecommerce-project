@@ -24,3 +24,4 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
 });
 Route::get('/products/{id?}', [ProductController::class, 'getAllProducts']);
+Route::post('/add_product', [ProductController::class, 'addProduct']);
