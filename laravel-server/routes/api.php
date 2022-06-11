@@ -3,6 +3,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,3 +27,6 @@ Route::group([
 });
 Route::get('/products/{id?}', [ProductController::class, 'getAllProducts']);
 Route::post('/add_product', [ProductController::class, 'addProduct']);
+
+//categories APIs
+Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
