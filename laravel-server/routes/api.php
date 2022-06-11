@@ -38,6 +38,7 @@ Route::post('/getProductById', [ProductController::class, 'getProductById']);
 //categories APIs
 Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
 Route::post('/add_category', [CategoryController::class, 'addCategory']);
+Route::post('/getCategoryById', [CategoryController::class, 'getCategoryById']);
 
 //Likes APIs
 Route::post('/add_like', [LikeController::class, 'addLike']);

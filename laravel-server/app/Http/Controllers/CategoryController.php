@@ -18,6 +18,15 @@ class CategoryController extends Controller{
             "categories" => $categories
         ], 200);
     }
+    public function getCategoryById(Request $request){
+        $category = Category::orderBy('created_at','desc')->get();
+        $category = Category::find($request->id)->get();
+        return response()->json([
+            "status" => "Success",
+            "category" => $category
+        ], 200);
+
+}
     public function addCategory(Request $request){
         $category = new Category;
         $category->category_name = $request->category_name;
