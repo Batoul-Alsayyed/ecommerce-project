@@ -25,8 +25,16 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
 });
+
+
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('/add_product', [ProductController::class, 'addProduct']);
+});
+
 Route::get('/products/{id?}', [ProductController::class, 'getAllProducts']);
-Route::post('/add_product', [ProductController::class, 'addProduct']);
 
 //categories APIs
 Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
@@ -34,3 +42,4 @@ Route::post('/add_category', [CategoryController::class, 'addCategory']);
 
 //Likes APIs
 Route::post('/add_like', [LikeController::class, 'addLike']);
+Route::get('/likes/{id?}', [LikeController::class, 'getAllLikes']);
