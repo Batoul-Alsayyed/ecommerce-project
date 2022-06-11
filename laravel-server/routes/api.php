@@ -30,3 +30,4 @@ Route::post('/add_product', [ProductController::class, 'addProduct']);
 
 //categories APIs
 Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
+Route::post('/add_category', [CategoryController::class, 'addCategory']);
