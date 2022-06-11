@@ -18,4 +18,18 @@ class ProductController extends Controller{
             "products" => $products
         ], 200);
     }
+    public function addProduct(Request $request){
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->category_id = $request->category_id;
+        $product->img_link = $request->img_link;
+        $product->save();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }
