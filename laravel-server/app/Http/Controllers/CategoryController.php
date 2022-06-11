@@ -18,4 +18,14 @@ class CategoryController extends Controller{
             "categories" => $categories
         ], 200);
     }
+    public function addCategory(Request $request){
+        $category = new Category;
+        $category->category_name = $request->category_name;
+
+        $category->save();
+        
+        return response()->json([
+            "status" => "Success"
+        ], 200);
+    }
 }
