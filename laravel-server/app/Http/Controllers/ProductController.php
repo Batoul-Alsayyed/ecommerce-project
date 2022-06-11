@@ -13,19 +13,24 @@ class ProductController extends Controller{
      * @return void
      */
     public function __construct() {
-        $this->middleware('auth:api', ['except' => ['addProduct']]);
+        $this->middleware('auth:api', ['except' => ['addProduct','getAllProducts','getProductById']]);
     }
-    public function getAllProducts($id = null){
-        if($id != null){
-            $products = Product::find($id);
-        }else{
-            $products = Product::all();
-        }
+    public function getAllProducts(){
+        $products = Product::all();
         
         return response()->json([
             "status" => "Success",
             "products" => $products
         ], 200);
+    }
+    public function getProductById(Request $request){
+            $product = Product::orderBy('created_at','desc')->get();
+            $product = Product::find($request->id)->get();
+            return response()->json([
+                "status" => "Success",
+                "product" => $product
+            ], 200);
+
     }
     public function addProduct(Request $request){
         $validator = Validator::make($request->all(), [
@@ -49,36 +54,7 @@ class ProductController extends Controller{
         ], 201);
 
     }
-        /**
-     * Refresh a token.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function refresh() {
-        return $this->createNewToken(auth()->refresh());
-    }
-     /**
-     * Get the authenticated User.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function userProfile() {
-        return response()->json(auth()->user());
-    }
-     /**
-     * Get the token array structure.
-     *
-     * @param  string $token
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    protected function createNewToken($token){
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60,
-            'product' => auth()->product()
-        ]);
-}
+
+
 
 }
