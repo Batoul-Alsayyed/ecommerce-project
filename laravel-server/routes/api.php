@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\LikeController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,3 +31,6 @@ Route::post('/add_product', [ProductController::class, 'addProduct']);
 //categories APIs
 Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
 Route::post('/add_category', [CategoryController::class, 'addCategory']);
+
+//Likes APIs
+Route::post('/add_like', [LikeController::class, 'addLike']);
