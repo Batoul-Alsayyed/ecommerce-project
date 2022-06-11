@@ -26,15 +26,14 @@ Route::group([
     Route::get('/user-profile', [AuthController::class, 'userProfile']);    
 });
 
-
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('/add_product', [ProductController::class, 'addProduct']);
 });
-
-Route::get('/products/{id?}', [ProductController::class, 'getAllProducts']);
+Route::get('/products', [ProductController::class, 'getAllProducts']);
+Route::post('/getProductById', [ProductController::class, 'getProductById']);
 
 //categories APIs
 Route::get('/categories/{id?}', [CategoryController::class, 'getAllCategories']);
