@@ -213,3 +213,8 @@ nav .fa-solid{
         font-size: 30px;        
     }
 }
+/*---signup page ----*/
+.signup-page{
+    background-image: linear-gradient(to right, blueviolet , white);
+
+}
