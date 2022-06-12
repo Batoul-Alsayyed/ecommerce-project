@@ -230,6 +230,7 @@ nav .fa-solid{
     flex-direction: column;
 }
 .center h1{
+    color: blueviolet;
     text-align: center;
     padding: 0 0 20px 0;
     border-bottom: 1px solid silver;
@@ -327,4 +328,13 @@ input[type="button"]:hover{
     text-align: center;
     font-size: 16px;
     color: blueviolet;
+}
+@media (max-width:600px) {
+    .center{
+        width: 300px;
+
+    }
+    .center form{
+        flex-basis: 100%;
+    }
 }
