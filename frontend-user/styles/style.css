@@ -192,6 +192,9 @@ nav .fa-solid{
     margin-bottom: 15px;
     text-align: center;
 }
+.products-col .fa-solid:hover{
+    color: blueviolet;
+}
 @media(max-width: 700px){
     .row{
         margin-top: 5%;
