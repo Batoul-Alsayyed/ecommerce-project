@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(165, 167, 175, 0.7),rgba(165, 167, 175, 0.7)), url(../assets/shapelined-_JBKdviweXI-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
