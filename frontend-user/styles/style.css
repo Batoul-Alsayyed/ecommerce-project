@@ -39,7 +39,7 @@ nav{
     content: '';
     width: 0%;
     height: 2px;
-    background: blueviolet;
+    background: white;
     display: block;
     margin: auto;
 }
@@ -104,12 +104,34 @@ nav .fa-solid{
     }
     nav .fa-solid{
         display: block;
-        color: blueviolet;
+        color: ;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
     }
     .nav-links ul{
         padding: 30px;
+    }
+    
+}
+/*---footer--*/
+.footer{
+    background-color: blueviolet;
+}
+.footer div{
+    display: flex;
+    padding: 1.5% 6%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-weight: 600;
+}
+.footer p{
+    margin: 20px;
+}
+@media(max-width: 700px){
+    .footer div{
+        font-size: 13px;
     }
 }
