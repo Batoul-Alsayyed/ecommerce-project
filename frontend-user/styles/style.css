@@ -104,13 +104,16 @@ nav .fa-solid{
     }
     nav .fa-solid{
         display: block;
-        color: ;
+        color: blueviolet;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
     }
     .nav-links ul{
         padding: 30px;
+    }
+    .header img{
+        width: 90px;
     }
     
 }
