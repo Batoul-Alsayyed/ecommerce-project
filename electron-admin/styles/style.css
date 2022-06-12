@@ -1,5 +1,5 @@
 .navigation img{
-    width: 100px;
+    width: 90px
 }
 *{
     margin: 0;
@@ -23,6 +23,9 @@ body{
     border-left: 10px solid rgb(196, 192, 192);
     transition: .5s;
     overflow: hidden;
+}
+.navigation.active{
+    width: 60px;
 }
 .navigation ul{
     position: absolute;
@@ -114,6 +117,11 @@ body{
     min-height: 100vh;
     background: white;
     transition: .5s;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+
 }
 .topbar{
     width: 100%;
