@@ -209,3 +209,9 @@ body{
   background-color: blueviolet;
   color: #FFF;
 }
+.products-table{
+    display: none;
+}
+.categories-table{
+    display: none;
+}
