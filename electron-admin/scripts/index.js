@@ -1,6 +1,5 @@
 // Get products
 
-getProducts();
 
 //Menu toggle
 
@@ -58,14 +57,42 @@ function getProducts() {
     for (let product = 0; product < response.data.products.length; product++) {
         products.innerHTML += `
         <tr>
-        <td>1</td>
+        <td>${response.data.products[product]["id"]}</td>
         <td>${response.data.products[product]["name"]}</td>
         <td>${response.data.products[product]["description"]}</td>
         <td>${response.data.products[product]["price"]}$</td>
         <td>${response.data.products[product]["quantity"]}</td>
         <td>${response.data.products[product]["category_id"]}</td>
-        <td>link</td>
+        <td>${response.data.products[product]["img_link"]}</td>
       </tr>`;
     }
   });
 }
+
+
+//getting categories from database
+
+
+
+ let categories = document.querySelector(".categories-table");
+
+ function getCategories() {
+   axios({
+     method: "GET",
+     url: "http://127.0.0.1:8000/api/categories",
+   }).then(function (response) {
+     console.log(response.data.categories.length);
+     console.log(response.data.categories[0]["category_name"]);
+
+     for (let category = 0; category < response.data.categories.length; category++) {
+        categories.innerHTML += 
+         `<tr>
+         <td>${response.data.categories[category]["id"]}</td>
+         <td>${response.data.categories[category]["category_name"]}</td>
+         </tr>`
+     }
+   });
+ }
+ getProducts();
+ getCategories();
+ 
