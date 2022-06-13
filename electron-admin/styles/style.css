@@ -213,9 +213,9 @@ body{
   background-color: blueviolet;
   color: #FFF;
 }
-.products-table{
+.products-class{
     display: none;
 }
-.categories-table{
+.categories-class{
     display: none;
 }
