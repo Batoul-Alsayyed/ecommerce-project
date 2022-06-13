@@ -7,7 +7,6 @@ let main = document.querySelector(".main");
 toggle.addEventListener("click", function(){
     navigation.classList.toggle('active');
     main.classList.toggle('active');
-    document.getElementById("logo").style.width = "50px";
 
 })
 let list = document.querySelectorAll('.navigation li');
@@ -26,7 +25,7 @@ function clickingNavLinks(){
     console.log("id = ",this.id);
      if (this.id === "categories"){
         document.getElementsByClassName("categories-table")[0].style.display = "block";
-        // document.getElementsByClassName("products-table")[0].style.display = "none";
+        document.getElementsByClassName("products-table")[0].style.display = "block";
     }
     else if (this.id === "products"){
         document.getElementsByClassName("categories-table")[0].style.display = "none";

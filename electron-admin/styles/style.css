@@ -1,5 +1,5 @@
 .navigation img{
-    width: 90px
+    width: 60px
 }
 *{
     margin: 0;
@@ -131,6 +131,9 @@ body{
     align-items: center;
     padding: 0 10px;
 }
+.topbar h1{
+    color: blueviolet;
+}
 .toggle{
     position: relative;
     width: 60px;
@@ -143,6 +146,7 @@ body{
     size: 50px;
     margin-top: 20px;
 }
+
 
 .table-btns{
     margin-top: 10vh;
