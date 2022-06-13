@@ -6,18 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 
 class CategoryController extends Controller{
-    public function getAllCategories($id = null){
-        if($id != null){
-            $categories = Category::find($id);
-        }else{
-            $categories = Category::all();
-        }
+
+    public function getAllCategories(){
+        $categories = Category::all();
         
         return response()->json([
             "status" => "Success",
             "categories" => $categories
         ], 200);
     }
+
+
+
+
     public function getCategoryById(Request $request){
         $category = Category::orderBy('created_at','desc')->get();
         $category = Category::find($request->id)->get();
