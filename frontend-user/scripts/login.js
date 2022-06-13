@@ -10,13 +10,13 @@ function submitclick(){
 
     axios({
         method: 'POST',
-        url:'http://localhost/Foody-backend/login.php',
+        url:'http://127.0.0.1:8000/api/auth/login',
         data: data
     }).then(function(user){
-        console.log(user);
         if(user.data.response!="User Not Found"){
                 window.location.href='C:/xampp/htdocs/Ecommerce-project/frontend-user/index.html';
-
+                localStorage.setItem("user_id",user.data.user.id);
+                console.log("user_id",user.data.user.id);
         }
         else{
             alert("Wrong email or password!");
